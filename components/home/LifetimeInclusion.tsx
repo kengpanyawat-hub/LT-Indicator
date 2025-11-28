@@ -78,7 +78,7 @@ export default function LifetimeInclusion() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-red-900/10 via-transparent to-transparent" />
       <div className="container mx-auto px-4 relative">
         <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-16">
-          What's included in Lifetime Plans
+          What&apos;s included in Lifetime Plans
         </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
