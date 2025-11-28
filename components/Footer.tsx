@@ -53,13 +53,13 @@ export default function Footer() {
           <div className="space-y-4">
             <Link href="/" className="flex items-center space-x-2">
               <Image
-                src="/longtrade-logo.svg"
+                src="/longtrade-logo.png"
                 alt="Longtrade Academy"
                 width={50}
                 height={50}
                 className="w-auto h-12"
               />
-              <span className="text-xl font-bold text-white">LONGTRADE</span>
+              
             </Link>
             <p className="text-sm text-gray-400 leading-relaxed">
               อินดิเคเตอร์และระบบช่วยเทรดระดับมืออาชีพ
