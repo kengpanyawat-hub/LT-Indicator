@@ -7,6 +7,7 @@ import PricingSection from "@/components/home/PricingSection";
 import Testimonials from "@/components/home/Testimonials";
 import FaqSection from "@/components/home/FaqSection";
 import FinalCTA from "@/components/home/FinalCTA";
+import TradingToolkit from "@/components/home/TradingToolkit";
 
 export default function HomePage() {
   return (
@@ -17,6 +18,7 @@ export default function HomePage() {
       <HowItWorks />
       <LifetimeInclusion />
       <PricingSection />
+      <TradingToolkit />
       <Testimonials />
       <FaqSection />
       <FinalCTA />
