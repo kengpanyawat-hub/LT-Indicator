@@ -48,9 +48,7 @@ export default function Navbar() {
               height={50}
               className="w-auto h-12"
             />
-            <span className="hidden md:block text-xl font-bold text-white">
-              LONGTRADE
-            </span>
+            
           </Link>
 
           {/* Desktop Menu */}
