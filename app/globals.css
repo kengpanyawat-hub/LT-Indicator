@@ -39,10 +39,20 @@
 @layer utilities {
   .glass-panel {
     @apply bg-white/5 border border-red-500/40 backdrop-blur-xl shadow-[0_0_40px_rgba(214,31,42,0.4)];
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(255, 255, 255, 0.01) 100%
+    );
   }
 
   .glass-card {
     @apply bg-black/40 border border-red-500/20 backdrop-blur-md shadow-[0_0_20px_rgba(214,31,42,0.2)];
+    background: linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.03) 0%,
+      rgba(0, 0, 0, 0.5) 100%
+    );
   }
 
   .text-glow {
@@ -51,5 +61,44 @@
 
   .neon-border {
     @apply border border-red-500 shadow-[0_0_15px_rgba(214,31,42,0.5)];
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+  }
+
+  /* Premium hover effects */
+  .premium-card {
+    position: relative;
+    transition: all 0.3s ease;
+  }
+
+  .premium-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(135deg, rgba(214, 31, 42, 0.5), rgba(236, 72, 153, 0.5));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .premium-card:hover::before {
+    opacity: 1;
+  }
+
+  /* Shimmer effect */
+  .shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    background-size: 200% 100%;
   }
 }

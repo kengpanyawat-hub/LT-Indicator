@@ -79,11 +79,53 @@ const config: Config = {
             boxShadow: "0 0 40px rgba(214, 31, 42, 0.8)",
           },
         },
+        float: {
+          "0%, 100%": {
+            transform: "translate(0, 0) scale(1)",
+          },
+          "33%": {
+            transform: "translate(30px, -30px) scale(1.1)",
+          },
+          "66%": {
+            transform: "translate(-20px, 20px) scale(0.9)",
+          },
+        },
+        "float-delayed": {
+          "0%, 100%": {
+            transform: "translate(0, 0) scale(1)",
+          },
+          "33%": {
+            transform: "translate(-30px, 30px) scale(1.1)",
+          },
+          "66%": {
+            transform: "translate(20px, -20px) scale(0.9)",
+          },
+        },
+        gradient: {
+          "0%, 100%": {
+            backgroundPosition: "0% 50%",
+          },
+          "50%": {
+            backgroundPosition: "100% 50%",
+          },
+        },
+        shimmer: {
+          "0%": {
+            backgroundPosition: "-1000px 0",
+          },
+          "100%": {
+            backgroundPosition: "1000px 0",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         glow: "glow 2s ease-in-out infinite",
+        float: "float 20s ease-in-out infinite",
+        "float-delayed": "float-delayed 20s ease-in-out infinite",
+        gradient: "gradient 8s ease infinite",
+        shimmer: "shimmer 3s linear infinite",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
