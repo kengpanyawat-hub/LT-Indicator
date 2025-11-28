@@ -2,268 +2,205 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
-import { MessageCircle, Play, Shield, TrendingUp } from "lucide-react";
+import { Infinity, Zap, Sparkles, Star } from "lucide-react";
 import { motion } from "framer-motion";
-import CountdownTimer from "./CountdownTimer";
-import LiveTicker from "./LiveTicker";
+import { useEffect, useState } from "react";
 
 export default function HeroSection() {
+  const [timeLeft, setTimeLeft] = useState({
+    hours: 16,
+    minutes: 31,
+    seconds: 15,
+  });
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setTimeLeft((prev) => {
+        let { hours, minutes, seconds } = prev;
+
+        if (seconds > 0) {
+          seconds--;
+        } else if (minutes > 0) {
+          minutes--;
+          seconds = 59;
+        } else if (hours > 0) {
+          hours--;
+          minutes = 59;
+          seconds = 59;
+        }
+
+        return { hours, minutes, seconds };
+      });
+    }, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Pure black background with subtle grid */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 pb-12">
+      {/* Pure black background */}
       <div className="absolute inset-0 bg-[#000000]" />
+
+      {/* Subtle grid pattern */}
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#0a0a0a_1px,transparent_1px),linear-gradient(to_bottom,#0a0a0a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
-      {/* Single red gradient - เอาสีอื่นออกหมด */}
-      <div className="absolute inset-0 bg-gradient-to-b from-red-950/20 via-black to-black" />
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[800px] bg-red-500/10 rounded-full blur-[120px]" />
+      {/* Red gradient glow */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-red-500/5 rounded-full blur-[120px]" />
 
-      {/* เอา orbs หลายสีออก ใช้แค่สีแดงเดียว */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 -left-20 w-96 h-96 bg-red-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-red-500/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-      </div>
+      <div className="container mx-auto px-4 relative z-10 max-w-5xl">
+        <div className="flex flex-col items-center text-center space-y-8">
+          {/* Offer text */}
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="text-gray-400 text-sm md:text-base tracking-wide"
+          >
+            Black Friday offer ends in
+          </motion.div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        {/* Live ticker */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="flex justify-center mb-8"
-        >
-          <LiveTicker />
-        </motion.div>
+          {/* Countdown Timer - Large */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.1 }}
+            className="flex items-center gap-2 md:gap-4"
+          >
+            {[
+              { value: timeLeft.hours, label: "Hours" },
+              { value: timeLeft.minutes, label: "Minutes" },
+              { value: timeLeft.seconds, label: "Seconds" },
+            ].map((unit, index) => (
+              <div key={unit.label} className="flex items-center">
+                <div className="text-center">
+                  <div className="text-6xl md:text-8xl lg:text-9xl font-bold text-white tabular-nums tracking-tight">
+                    {String(unit.value).padStart(2, "0")}
+                  </div>
+                </div>
+                {index < 2 && (
+                  <div className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mx-1 md:mx-2">
+                    :
+                  </div>
+                )}
+              </div>
+            ))}
+          </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Left Column - Text Content */}
+          {/* Preview Box with Red Border */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="space-y-8 text-center lg:text-left"
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="w-full max-w-4xl mt-8"
           >
-            {/* Premium badge - ใช้สีแดงอย่างเดียว */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="flex justify-center lg:justify-start"
-            >
-              <Badge variant="neon" className="px-4 py-2 text-sm font-bold">
-                <Shield className="w-4 h-4 mr-2" />
-                Trusted by 12,000+ Professional Traders
-              </Badge>
-            </motion.div>
+            <div className="relative group">
+              {/* Glow effect */}
+              <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-pink-600 rounded-2xl opacity-75 blur group-hover:opacity-100 transition duration-500" />
 
-            <motion.h1
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.1] tracking-tight"
-            >
-              <span className="block text-white mb-2">
-                Trade Smarter.
-              </span>
-              <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500">
-                Win Consistently.
-              </span>
-            </motion.h1>
-
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-xl md:text-2xl text-gray-400 leading-relaxed max-w-2xl font-light"
-            >
-              อินดิเคเตอร์ระดับสถาบันที่ใช้โดย Professional Traders
-              <br />
-              <span className="text-gray-500 text-lg">
-                พัฒนาด้วย AI • Backtested • Real-time Signals
-              </span>
-            </motion.p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="flex justify-center lg:justify-start"
-            >
-              <CountdownTimer />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex flex-col sm:flex-row gap-4"
-            >
-              <Button
-                variant="neon"
-                size="xl"
-                className="group relative overflow-hidden h-14 px-8"
-                asChild
-              >
-                <a href="https://line.me/ti/p/YOUR_LINE_ID" target="_blank" rel="noopener noreferrer">
-                  <MessageCircle className="mr-2 h-5 w-5 relative z-10" />
-                  <span className="relative z-10 font-bold">เริ่มต้นใช้งาน - ฟรี!</span>
-                </a>
-              </Button>
-
-              <Button
-                variant="outline"
-                size="xl"
-                className="group h-14 px-8 border-2 border-white/10 hover:border-red-500/50 hover:bg-red-500/5"
-                asChild
-              >
-                <a href="#demo" className="flex items-center">
-                  <Play className="mr-2 h-5 w-5" />
-                  <span className="font-semibold">ดูการทำงาน</span>
-                </a>
-              </Button>
-            </motion.div>
-
-            {/* Trust indicators - monochrome */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 1 }}
-              className="flex flex-wrap items-center justify-center lg:justify-start gap-6 pt-4 text-sm text-gray-500"
-            >
-              <div className="flex items-center gap-2">
-                <div className="w-1 h-1 bg-red-500 rounded-full" />
-                <span>การันตีผลลัพธ์</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-1 h-1 bg-red-500 rounded-full" />
-                <span>รับประกัน 7 วัน</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-1 h-1 bg-red-500 rounded-full" />
-                <span>Support 24/7</span>
-              </div>
-            </motion.div>
-          </motion.div>
-
-          {/* Right Column - Dashboard Preview */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="relative"
-          >
-            {/* Main dashboard container */}
-            <div className="relative">
-              {/* Subtle red glow - ลดความเข้มลง */}
-              <div className="absolute inset-0 bg-red-500/20 rounded-2xl blur-3xl" />
-
-              {/* Dashboard frame - ใช้สีเดียว */}
-              <div className="relative glass-panel rounded-2xl p-2 border border-red-500/30">
-                {/* Image container */}
-                <div className="relative rounded-xl overflow-hidden bg-black/80">
+              {/* Main box */}
+              <div className="relative rounded-2xl border-2 border-red-500/60 bg-black/40 backdrop-blur-sm p-1 overflow-hidden">
+                {/* Dashboard preview */}
+                <div className="relative rounded-xl overflow-hidden bg-black/60 aspect-video">
                   <Image
                     src="/hero-dashboard.svg"
                     alt="Professional Trading Dashboard"
                     width={1200}
                     height={675}
-                    className="relative z-10 w-full h-auto"
+                    className="w-full h-full object-cover opacity-90"
                     priority
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  {/* Overlay gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
                 </div>
-
-                {/* Floating stats - monochrome เท่านั้น */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1 }}
-                  className="absolute -bottom-6 -left-6 glass-card rounded-xl p-4 border border-white/10"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
-                      <TrendingUp className="w-5 h-5 text-red-400" />
-                    </div>
-                    <div>
-                      <div className="text-xs text-gray-500">Win Rate</div>
-                      <div className="text-xl font-bold text-white">89.3%</div>
-                    </div>
-                  </div>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.8, delay: 1.2 }}
-                  className="absolute -top-6 -right-6 glass-card rounded-xl p-4 border border-white/10"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center">
-                      <span className="text-lg font-bold text-red-400">150</span>
-                    </div>
-                    <div>
-                      <div className="text-xs text-gray-500">Signals/Day</div>
-                      <div className="text-sm font-semibold text-white">Daily Alerts</div>
-                    </div>
-                  </div>
-                </motion.div>
               </div>
-
-              {/* Floating badge */}
-              <motion.div
-                animate={{
-                  y: [0, -10, 0],
-                }}
-                transition={{
-                  duration: 3,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-                className="absolute top-4 left-1/2 -translate-x-1/2 px-6 py-3 bg-gradient-to-r from-red-600 to-pink-600 rounded-full shadow-[0_0_40px_rgba(214,31,42,0.6)] border border-red-400/50"
-              >
-                <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-white rounded-full animate-pulse" />
-                  <span className="text-sm font-bold text-white">#1 Trading Tools 2024</span>
-                </div>
-              </motion.div>
             </div>
           </motion.div>
-        </div>
 
-        {/* Trading Stats - Monochrome with red accents only */}
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 1.4 }}
-          className="mt-24"
-        >
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+          {/* Trust Badges - 3 Pills */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mt-8"
+          >
             {[
-              { label: "Active Traders", value: "12,547", trend: "+23.5%" },
-              { label: "Win Rate", value: "89.3%", trend: "+5.2%" },
-              { label: "Trust Score", value: "4.9/5", trend: "★★★★★" },
-              { label: "Years in Market", value: "6+", trend: "Since 2018" },
-            ].map((stat, index) => (
-              <motion.div
+              { icon: Infinity, text: "Lifetime access to top-tier indicators" },
+              { icon: Zap, text: "Powerful bots that trade for you" },
+              { icon: Sparkles, text: "50+ premium features" },
+            ].map((badge, index) => (
+              <div
                 key={index}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 1.6 + index * 0.1 }}
-                className="glass-card rounded-xl p-6 hover:border-red-500/30 transition-all group"
+                className="flex items-center gap-2 px-4 md:px-6 py-2.5 md:py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm hover:border-red-500/40 hover:bg-white/10 transition-all duration-300 group"
               >
-                <div className="text-center space-y-2">
-                  {/* ใช้สีขาวล้วนๆ ไม่มีสีอื่น */}
-                  <div className="text-3xl md:text-4xl font-bold text-white">
-                    {stat.value}
-                  </div>
-                  <div className="text-sm text-gray-500">{stat.label}</div>
-                  {/* trend ใช้สีแดงเบาๆ */}
-                  <div className="text-xs text-red-400/60 font-semibold">{stat.trend}</div>
-                </div>
-              </motion.div>
+                <badge.icon className="w-4 h-4 md:w-5 md:h-5 text-red-400 group-hover:text-red-300 transition-colors" />
+                <span className="text-xs md:text-sm text-gray-300 font-medium whitespace-nowrap">
+                  {badge.text}
+                </span>
+              </div>
             ))}
-          </div>
-        </motion.div>
+          </motion.div>
+
+          {/* Social Proof - Trusted by traders */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="flex flex-col items-center gap-3 mt-6"
+          >
+            {/* Avatar stack */}
+            <div className="flex items-center -space-x-3">
+              {[1, 2, 3, 4].map((i) => (
+                <div
+                  key={i}
+                  className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-black bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center"
+                >
+                  <Image
+                    src={`/user-${i > 3 ? 1 : i}.svg`}
+                    alt={`Trader ${i}`}
+                    width={48}
+                    height={48}
+                    className="w-full h-full rounded-full"
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Trust text and rating */}
+            <div className="flex flex-col items-center gap-1">
+              <div className="flex items-center gap-1">
+                {[1, 2, 3, 4, 5].map((i) => (
+                  <Star
+                    key={i}
+                    className="w-4 h-4 fill-red-500 text-red-500"
+                  />
+                ))}
+              </div>
+              <div className="text-sm md:text-base text-gray-400">
+                <span className="text-white font-semibold">Trusted by 100,000+</span> traders
+              </div>
+              <div className="text-xs text-gray-500">4.8 star user rating</div>
+            </div>
+          </motion.div>
+
+          {/* CTA Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+            className="mt-8"
+          >
+            <Button
+              variant="neon"
+              size="xl"
+              className="h-14 md:h-16 px-8 md:px-12 text-base md:text-lg font-bold shadow-[0_0_40px_rgba(214,31,42,0.5)] hover:shadow-[0_0_60px_rgba(214,31,42,0.7)] transition-all duration-300"
+              asChild
+            >
+              <a href="https://line.me/ti/p/YOUR_LINE_ID" target="_blank" rel="noopener noreferrer">
+                Get Promotion
+              </a>
+            </Button>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
