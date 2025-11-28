@@ -9,15 +9,15 @@ const features = [
     icon: Sparkles,
     title: "Lifetime Access",
     description: "เข้าถึงอินดิเคเตอร์ระดับพรีเมียมตลอดชีพ พร้อมอัปเดตฟรีทุกเวอร์ชั่น",
-    color: "text-yellow-400",
-    bgColor: "bg-yellow-400/10",
+    color: "text-red-400",
+    bgColor: "bg-red-400/10",
   },
   {
     icon: Cpu,
     title: "Powerful Bots",
     description: "ระบบเทรดอัตโนมัติที่ทำงานแทนคุณ 24/7 ด้วย AI และอัลกอริทึมขั้นสูง",
-    color: "text-blue-400",
-    bgColor: "bg-blue-400/10",
+    color: "text-red-400",
+    bgColor: "bg-red-400/10",
   },
   {
     icon: Activity,
@@ -30,8 +30,8 @@ const features = [
     icon: Users,
     title: "10,000+ Traders Trust Us",
     description: "เทรดเดอร์กว่า 10,000+ คนทั่วโลกไว้วางใจและใช้งานจริง",
-    color: "text-green-400",
-    bgColor: "bg-green-400/10",
+    color: "text-red-400",
+    bgColor: "bg-red-400/10",
   },
 ];
 
