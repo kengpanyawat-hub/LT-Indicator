@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Infinity, Zap, Sparkles, Star } from "lucide-react";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
@@ -99,16 +98,16 @@ export default function HeroSection() {
 
               {/* Main box */}
               <div className="relative rounded-2xl border-2 border-red-500/60 bg-black/40 backdrop-blur-sm p-1 overflow-hidden">
-                {/* Dashboard preview */}
-                <div className="relative rounded-xl overflow-hidden bg-black/60 aspect-video">
-                  <Image
-                    src="/hero-dashboard.svg"
-                    alt="Professional Trading Dashboard"
-                    width={1200}
-                    height={675}
-                    className="w-full h-full object-cover opacity-90"
-                    priority
-                  />
+                {/* Image placeholder */}
+                <div className="relative rounded-xl overflow-hidden bg-black/60 aspect-video flex items-center justify-center">
+                  {/* Placeholder for image - can be replaced with actual image */}
+                  <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900" />
+                  <div className="relative z-10 text-gray-600 text-center">
+                    <svg className="w-24 h-24 mx-auto mb-4 opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    </svg>
+                    <p className="text-sm font-medium">Dashboard Preview</p>
+                  </div>
                   {/* Overlay gradient */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
                 </div>
@@ -116,77 +115,11 @@ export default function HeroSection() {
             </div>
           </motion.div>
 
-          {/* Trust Badges - 3 Pills */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
-            className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mt-8"
-          >
-            {[
-              { icon: Infinity, text: "Lifetime access to top-tier indicators" },
-              { icon: Zap, text: "Powerful bots that trade for you" },
-              { icon: Sparkles, text: "50+ premium features" },
-            ].map((badge, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-2 px-4 md:px-6 py-2.5 md:py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-sm hover:border-red-500/40 hover:bg-white/10 transition-all duration-300 group"
-              >
-                <badge.icon className="w-4 h-4 md:w-5 md:h-5 text-red-400 group-hover:text-red-300 transition-colors" />
-                <span className="text-xs md:text-sm text-gray-300 font-medium whitespace-nowrap">
-                  {badge.text}
-                </span>
-              </div>
-            ))}
-          </motion.div>
-
-          {/* Social Proof - Trusted by traders */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.7 }}
-            className="flex flex-col items-center gap-3 mt-6"
-          >
-            {/* Avatar stack */}
-            <div className="flex items-center -space-x-3">
-              {[1, 2, 3, 4].map((i) => (
-                <div
-                  key={i}
-                  className="w-10 h-10 md:w-12 md:h-12 rounded-full border-2 border-black bg-gradient-to-br from-gray-700 to-gray-900 flex items-center justify-center"
-                >
-                  <Image
-                    src={`/user-${i > 3 ? 1 : i}.svg`}
-                    alt={`Trader ${i}`}
-                    width={48}
-                    height={48}
-                    className="w-full h-full rounded-full"
-                  />
-                </div>
-              ))}
-            </div>
-
-            {/* Trust text and rating */}
-            <div className="flex flex-col items-center gap-1">
-              <div className="flex items-center gap-1">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <Star
-                    key={i}
-                    className="w-4 h-4 fill-red-500 text-red-500"
-                  />
-                ))}
-              </div>
-              <div className="text-sm md:text-base text-gray-400">
-                <span className="text-white font-semibold">Trusted by 100,000+</span> traders
-              </div>
-              <div className="text-xs text-gray-500">4.8 star user rating</div>
-            </div>
-          </motion.div>
-
           {/* CTA Button */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
             className="mt-8"
           >
             <Button

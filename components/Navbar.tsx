@@ -42,7 +42,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2 hover:opacity-80 transition-opacity">
             <Image
-              src="/longtrade-logo.svg"
+              src="/longtrade-logo.png"
               alt="Longtrade Academy"
               width={50}
               height={50}
