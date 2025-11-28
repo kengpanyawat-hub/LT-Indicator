@@ -55,7 +55,12 @@ const indicators = [
 
 export default function IndicatorShowcase() {
   return (
-    <section className="py-24 bg-gradient-to-b from-black to-gray-950 relative overflow-hidden">
+    <section className="py-24 relative overflow-hidden">
+      {/* Pure black background */}
+      <div className="absolute inset-0 bg-[#000000]" />
+
+      {/* Subtle grid pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0a0a0a_1px,transparent_1px),linear-gradient(to_bottom,#0a0a0a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
       {/* Background glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-500/5 rounded-full blur-3xl" />
 

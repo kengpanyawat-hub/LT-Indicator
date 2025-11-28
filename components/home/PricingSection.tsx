@@ -138,7 +138,7 @@ export default function PricingSection() {
                     <div key={i} className="bg-black/40 p-4 rounded-lg">
                       <div className="flex justify-between items-center mb-2">
                         <h4 className="font-semibold text-white flex items-center">
-                          <CheckCircle className="w-4 h-4 mr-2 text-purple-500" />
+                          <CheckCircle className="w-4 h-4 mr-2 text-red-500" />
                           {feature.title}
                         </h4>
                         <span className="text-xs bg-white/10 text-white px-2 py-1 rounded-full">{feature.duration}</span>
@@ -148,7 +148,7 @@ export default function PricingSection() {
                           {feature.items.map((item, j) => (
                             <li
                               key={j}
-                              className="relative before:content-['•'] before:absolute before:left-[-1em] before:text-purple-500"
+                              className="relative before:content-['•'] before:absolute before:left-[-1em] before:text-red-500"
                             >
                               {item}
                             </li>
@@ -163,11 +163,11 @@ export default function PricingSection() {
                 <CardFooter className="p-6 flex flex-col items-center">
                   <p className="text-sm text-white/60 mb-4">
                     Got lifetime last year?{' '}
-                    <a href="#" className="text-purple-400 underline">
+                    <a href="#" className="text-red-400 underline">
                       Upgrade at a prorated price
                     </a>
                   </p>
-                  <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 rounded-lg">
+                  <Button className="w-full bg-red-500 hover:bg-red-700 text-white font-bold py-3 rounded-lg">
                     Get Lifetime Plan
                   </Button>
                 </CardFooter>

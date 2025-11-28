@@ -53,7 +53,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-gray-400 text-sm md:text-base tracking-wide"
+            className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-purple-700 text-sm md:text-base tracking-wide"
           >
             Black Friday offer ends in
           </motion.div>

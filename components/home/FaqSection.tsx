@@ -45,9 +45,12 @@ const faqs = [
 
 export default function FaqSection() {
   return (
-    <section id="faq" className="py-24 bg-gradient-to-b from-black to-gray-950 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_var(--tw-gradient-stops))] from-red-900/10 via-transparent to-transparent" />
+    <section id="faq" className="py-24 bg-black relative overflow-hidden">
+      {/* Pure black background */}
+      <div className="absolute inset-0 bg-[#000000]" />
+
+      {/* Subtle grid pattern */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#0a0a0a_1px,transparent_1px),linear-gradient(to_bottom,#0a0a0a_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_100%)]" />
 
       <div className="container mx-auto px-4 relative z-10">
         <motion.div

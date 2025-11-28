@@ -15,10 +15,10 @@ export default function HomePage() {
       <HeroSection />
       <WhyLongtrade />
       <IndicatorShowcase />
+      <TradingToolkit />
       <HowItWorks />
       <LifetimeInclusion />
       <PricingSection />
-      <TradingToolkit />
       <Testimonials />
       <FaqSection />
       <FinalCTA />
