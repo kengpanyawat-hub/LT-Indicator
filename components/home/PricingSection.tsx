@@ -21,7 +21,6 @@ const pricingPlans = [
       "Email Support",
     ],
     ctaText: "เริ่มต้นใช้งาน",
-    gradient: "from-gray-600 to-gray-700",
   },
   {
     name: "Pro",
@@ -39,7 +38,6 @@ const pricingPlans = [
       "Trading Signals Group",
     ],
     ctaText: "สั่งซื้อตอนนี้",
-    gradient: "from-red-600 to-pink-600",
   },
   {
     name: "Elite Bundle",
@@ -59,7 +57,6 @@ const pricingPlans = [
       "Private Community Access",
     ],
     ctaText: "รับข้อเสนอพิเศษ",
-    gradient: "from-yellow-600 to-orange-600",
   },
 ];
 
@@ -119,7 +116,7 @@ export default function PricingSection() {
                   <p className="text-sm text-gray-400 mb-6">{plan.description}</p>
                   <div className="space-y-2">
                     <div className="flex items-baseline justify-center gap-2">
-                      <span className={`text-5xl font-bold bg-gradient-to-r ${plan.gradient} bg-clip-text text-transparent`}>
+                      <span className={`text-5xl font-bold ${plan.popular ? 'text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500' : 'text-white'}`}>
                         {plan.price}
                       </span>
                     </div>
@@ -130,8 +127,8 @@ export default function PricingSection() {
                 <CardContent className="flex-1 space-y-4 px-6">
                   {plan.features.map((feature, i) => (
                     <div key={i} className="flex items-start gap-3">
-                      <div className={`mt-0.5 w-5 h-5 rounded-full bg-gradient-to-br ${plan.gradient} flex items-center justify-center flex-shrink-0`}>
-                        <Check className="w-3 h-3 text-white" />
+                      <div className={`mt-0.5 w-5 h-5 rounded-full ${plan.popular ? 'bg-gradient-to-br from-red-500 to-pink-500' : 'bg-white/10'} flex items-center justify-center flex-shrink-0`}>
+                        <Check className={`w-3 h-3 ${plan.popular ? 'text-white' : 'text-gray-400'}`} />
                       </div>
                       <span className="text-gray-300 text-sm leading-relaxed">
                         {feature}

@@ -9,28 +9,24 @@ const stats = [
     value: "12,547",
     label: "Active Traders",
     trend: "+23.5%",
-    color: "from-blue-500 to-cyan-500",
   },
   {
     icon: TrendingUp,
     value: "89.3%",
     label: "Win Rate",
     trend: "+5.2%",
-    color: "from-green-500 to-emerald-500",
   },
   {
     icon: Shield,
     value: "4.9/5",
     label: "Trust Score",
     trend: "★★★★★",
-    color: "from-yellow-500 to-orange-500",
   },
   {
     icon: Award,
     value: "6+ Years",
     label: "in Market",
     trend: "Since 2018",
-    color: "from-purple-500 to-pink-500",
   },
 ];
 
@@ -45,23 +41,21 @@ export default function TradingStats() {
           transition={{ duration: 0.6, delay: index * 0.1 }}
           className="relative group"
         >
-          <div className="absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-10 transition-opacity rounded-xl blur-xl"
-            style={{ background: `linear-gradient(to bottom right, var(--tw-gradient-stops))` }}
-          />
+          <div className="absolute inset-0 bg-red-500/5 opacity-0 group-hover:opacity-100 transition-opacity rounded-xl blur-xl" />
 
           <div className="relative glass-card rounded-xl p-4 lg:p-6 hover:border-red-500/40 transition-all duration-300">
             {/* Icon */}
-            <div className={`inline-flex p-2 rounded-lg bg-gradient-to-br ${stat.color} bg-opacity-10 mb-3`}>
-              <stat.icon className="w-5 h-5 text-white" />
+            <div className="inline-flex p-2 rounded-lg bg-white/5 mb-3">
+              <stat.icon className="w-5 h-5 text-red-400" />
             </div>
 
             {/* Value */}
             <div className="space-y-1">
-              <div className={`text-2xl lg:text-3xl font-bold bg-gradient-to-r ${stat.color} bg-clip-text text-transparent`}>
+              <div className="text-2xl lg:text-3xl font-bold text-white">
                 {stat.value}
               </div>
               <div className="text-xs lg:text-sm text-gray-400">{stat.label}</div>
-              <div className="text-xs text-green-400 font-semibold">{stat.trend}</div>
+              <div className="text-xs text-red-400/60 font-semibold">{stat.trend}</div>
             </div>
 
             {/* Animated border */}

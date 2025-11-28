@@ -10,21 +10,18 @@ const steps = [
     icon: MousePointer,
     title: "เลือก Indicator / Package",
     description: "เลือกอินดิเคเตอร์หรือแพ็กเกจที่ตรงกับสไตล์การเทรดของคุณ เราม แพ็กเกจให้เลือกหลากหลาย",
-    color: "from-red-500 to-pink-500",
   },
   {
     number: "02",
     icon: MessageCircle,
     title: "ติดต่อทีมงานผ่าน LINE",
     description: "แอดไลน์เพื่อสั่งซื้อและรับคำปรึกษาจากทีมงาน พร้อมรับโปรโมชั่นพิเศษ",
-    color: "from-blue-500 to-cyan-500",
   },
   {
     number: "03",
     icon: Settings,
     title: "ติดตั้ง + เข้าอบรมใช้งาน",
     description: "ทีมงานช่วยติดตั้งและสอนใช้งานจนเชี่ยวชาญ พร้อม Support ตลอดการใช้งาน",
-    color: "from-green-500 to-emerald-500",
   },
 ];
 
@@ -70,13 +67,13 @@ export default function HowItWorks() {
 
               <Card className="glass-card hover:border-red-500/40 transition-all duration-300 h-full relative group">
                 {/* Step number badge */}
-                <div className={`absolute -top-6 -right-6 w-16 h-16 rounded-full bg-gradient-to-br ${step.color} flex items-center justify-center font-bold text-2xl text-white shadow-lg group-hover:scale-110 transition-transform`}>
+                <div className="absolute -top-6 -right-6 w-16 h-16 rounded-full bg-gradient-to-br from-red-500 to-pink-500 flex items-center justify-center font-bold text-2xl text-white shadow-lg group-hover:scale-110 transition-transform">
                   {step.number}
                 </div>
 
                 <CardContent className="p-8 space-y-4">
-                  <div className={`w-16 h-16 rounded-xl bg-gradient-to-br ${step.color} bg-opacity-10 flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                    <step.icon className="w-8 h-8 text-white" />
+                  <div className="w-16 h-16 rounded-xl bg-white/5 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <step.icon className="w-8 h-8 text-red-400" />
                   </div>
 
                   <h3 className="text-2xl font-semibold text-white group-hover:text-red-400 transition-colors">

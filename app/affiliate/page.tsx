@@ -24,29 +24,29 @@ const benefits = [
     icon: DollarSign,
     title: "ค่าคอมมิชชั่นสูงสุด 30%",
     description: "รับค่าคอมมิชชั่นสูงสุด 30% จากทุกยอดขาย ตลอดชีพ ไม่มีหมดอายุ",
-    color: "text-green-400",
-    bgColor: "bg-green-400/10",
+    color: "text-red-400",
+    bgColor: "bg-red-400/10",
   },
   {
     icon: Clock,
     title: "Lifetime Commission",
     description: "รับค่าคอมฯ ตลอดชีพ จากลูกค้าที่คุณแนะนำ ทุกครั้งที่เขาซื้อเพิ่ม",
-    color: "text-blue-400",
-    bgColor: "bg-blue-400/10",
+    color: "text-white",
+    bgColor: "bg-white/5",
   },
   {
     icon: BarChart3,
     title: "Dashboard เรียลไทม์",
     description: "ระบบติดตามยอดขาย คอมมิชชั่น และสถิติแบบเรียลไทม์",
-    color: "text-purple-400",
-    bgColor: "bg-purple-400/10",
+    color: "text-red-400",
+    bgColor: "bg-red-400/10",
   },
   {
     icon: Gift,
     title: "โบนัสพิเศษ",
     description: "รับโบนัสเพิ่มเมื่อยอดขายถึงเป้า พร้อมของรางวัลมากมาย",
-    color: "text-yellow-400",
-    bgColor: "bg-yellow-400/10",
+    color: "text-white",
+    bgColor: "bg-white/5",
   },
   {
     icon: Users,
@@ -59,8 +59,8 @@ const benefits = [
     icon: Award,
     title: "Priority Support",
     description: "ทีมงานเฉพาะดูแล Affiliate พร้อมช่วยปิดการขายให้",
-    color: "text-pink-400",
-    bgColor: "bg-pink-400/10",
+    color: "text-white",
+    bgColor: "bg-white/5",
   },
 ];
 
@@ -69,7 +69,6 @@ const commissionTiers = [
     tier: "Bronze",
     sales: "0-10 Sales/เดือน",
     commission: "15%",
-    color: "from-orange-700 to-orange-600",
     perks: [
       "ค่าคอมมิชชั่น 15%",
       "Dashboard เบื้องต้น",
@@ -81,7 +80,6 @@ const commissionTiers = [
     tier: "Silver",
     sales: "11-30 Sales/เดือน",
     commission: "20%",
-    color: "from-gray-500 to-gray-400",
     popular: false,
     perks: [
       "ค่าคอมมิชชั่น 20%",
@@ -95,7 +93,6 @@ const commissionTiers = [
     tier: "Gold",
     sales: "31-50 Sales/เดือน",
     commission: "25%",
-    color: "from-yellow-600 to-yellow-500",
     popular: true,
     perks: [
       "ค่าคอมมิชชั่น 25%",
@@ -110,7 +107,6 @@ const commissionTiers = [
     tier: "Platinum",
     sales: "51+ Sales/เดือน",
     commission: "30%",
-    color: "from-purple-600 to-purple-500",
     popular: false,
     perks: [
       "ค่าคอมมิชชั่น 30%",
@@ -247,14 +243,14 @@ export default function AffiliatePage() {
                 )}
 
                 <CardHeader className="text-center pb-8">
-                  <div className={`mx-auto mb-4 w-20 h-20 rounded-full bg-gradient-to-br ${tier.color} flex items-center justify-center`}>
-                    <Award className="w-10 h-10 text-white" />
+                  <div className={`mx-auto mb-4 w-20 h-20 rounded-full ${tier.popular ? 'bg-gradient-to-br from-red-500 to-pink-500' : 'bg-white/10'} flex items-center justify-center`}>
+                    <Award className={`w-10 h-10 ${tier.popular ? 'text-white' : 'text-gray-400'}`} />
                   </div>
                   <CardTitle className="text-2xl text-white mb-2">
                     {tier.tier}
                   </CardTitle>
                   <div className="text-sm text-gray-400 mb-4">{tier.sales}</div>
-                  <div className={`text-5xl font-bold bg-gradient-to-r ${tier.color} bg-clip-text text-transparent`}>
+                  <div className={`text-5xl font-bold ${tier.popular ? 'text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500' : 'text-white'}`}>
                     {tier.commission}
                   </div>
                   <div className="text-sm text-gray-400">Commission Rate</div>
@@ -263,7 +259,7 @@ export default function AffiliatePage() {
                 <CardContent className="space-y-3">
                   {tier.perks.map((perk, i) => (
                     <div key={i} className="flex items-start gap-2">
-                      <Check className="w-4 h-4 text-green-400 mt-0.5 flex-shrink-0" />
+                      <Check className={`w-4 h-4 ${tier.popular ? 'text-red-400' : 'text-gray-500'} mt-0.5 flex-shrink-0`} />
                       <span className="text-sm text-gray-300">{perk}</span>
                     </div>
                   ))}

@@ -75,7 +75,6 @@ export default function FinalCTA() {
                 asChild
               >
                 <a href="https://line.me/ti/p/YOUR_LINE_ID" target="_blank" rel="noopener noreferrer">
-                  <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-green-500 opacity-0 group-hover:opacity-100 transition-opacity" />
                   <MessageCircle className="mr-3 h-6 w-6 relative z-10" />
                   <span className="relative z-10">สั่งซื้อผ่าน LINE - รับส่วนลดทันที!</span>
                 </a>
@@ -104,21 +103,15 @@ export default function FinalCTA() {
               className="flex flex-wrap items-center justify-center gap-6 pt-8 border-t border-white/10 text-sm text-gray-400"
             >
               <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
+                <div className="w-1.5 h-1.5 bg-red-500 rounded-full" />
                 <span>ชำระเงินปลอดภัย 100%</span>
               </div>
               <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
+                <div className="w-1.5 h-1.5 bg-red-500 rounded-full" />
                 <span>รับประกันความพึงพอใจ 7 วัน</span>
               </div>
               <div className="flex items-center gap-2">
-                <svg className="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                </svg>
+                <div className="w-1.5 h-1.5 bg-red-500 rounded-full" />
                 <span>Support 24/7</span>
               </div>
             </motion.div>
