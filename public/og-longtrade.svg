@@ -1,0 +1,22 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#05050A"/>
+  <rect x="50" y="50" width="1100" height="530" fill="#0A0A0A" rx="20"/>
+
+  <!-- Logo -->
+  <rect x="100" y="100" width="80" height="80" fill="#D61F2A" rx="10"/>
+  <circle cx="140" cy="140" r="20" fill="#FFFFFF" opacity="0.3"/>
+
+  <!-- Main text -->
+  <text x="600" y="260" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="#FFFFFF" text-anchor="middle">
+    LONGTRADE ACADEMY
+  </text>
+  <text x="600" y="340" font-family="Arial, sans-serif" font-size="36" fill="#D61F2A" text-anchor="middle">
+    Premium Trading Indicators & Bots
+  </text>
+  <text x="600" y="420" font-family="Arial, sans-serif" font-size="28" fill="#FFFFFF" text-anchor="middle" opacity="0.7">
+    อินดิเคเตอร์และระบบช่วยเทรดระดับมืออาชีพ
+  </text>
+
+  <!-- Glow effect -->
+  <circle cx="600" cy="315" r="300" fill="#D61F2A" opacity="0.1"/>
+</svg>

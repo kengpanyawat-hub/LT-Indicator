@@ -1,0 +1,13 @@
+# Robots.txt for Longtrade Academy
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://longtrade.academy/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1

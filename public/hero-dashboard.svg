@@ -1,0 +1,26 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="675" fill="#0A0A0A"/>
+  <rect x="50" y="50" width="1100" height="575" fill="#151515" rx="10"/>
+
+  <!-- Chart candlesticks -->
+  <line x1="200" y1="150" x2="200" y2="500" stroke="#D61F2A" stroke-width="2" opacity="0.3"/>
+  <rect x="180" y="200" width="40" height="150" fill="#D61F2A" opacity="0.6"/>
+  <rect x="280" y="250" width="40" height="120" fill="#22C55E" opacity="0.6"/>
+  <rect x="380" y="180" width="40" height="180" fill="#D61F2A" opacity="0.6"/>
+  <rect x="480" y="220" width="40" height="140" fill="#22C55E" opacity="0.6"/>
+  <rect x="580" y="170" width="40" height="200" fill="#D61F2A" opacity="0.6"/>
+  <rect x="680" y="240" width="40" height="130" fill="#22C55E" opacity="0.6"/>
+  <rect x="780" y="200" width="40" height="160" fill="#D61F2A" opacity="0.6"/>
+
+  <!-- Indicator lines -->
+  <path d="M 150 250 Q 400 200, 650 300 T 1050 280" stroke="#D61F2A" stroke-width="3" fill="none"/>
+  <path d="M 150 350 Q 400 300, 650 400 T 1050 380" stroke="#3B82F6" stroke-width="2" fill="none" opacity="0.7"/>
+
+  <!-- Glowing text -->
+  <text x="600" y="320" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#D61F2A" text-anchor="middle">
+    TRADING DASHBOARD
+  </text>
+  <text x="600" y="360" font-family="Arial, sans-serif" font-size="24" fill="#FFFFFF" text-anchor="middle" opacity="0.7">
+    Premium Indicator Preview
+  </text>
+</svg>

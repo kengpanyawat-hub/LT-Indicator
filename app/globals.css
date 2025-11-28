@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 2%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 5%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 5%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 356 76% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 64%;
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 356 76% 48%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[#05050A] text-foreground;
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-white/5 border border-red-500/40 backdrop-blur-xl shadow-[0_0_40px_rgba(214,31,42,0.4)];
+  }
+
+  .glass-card {
+    @apply bg-black/40 border border-red-500/20 backdrop-blur-md shadow-[0_0_20px_rgba(214,31,42,0.2)];
+  }
+
+  .text-glow {
+    text-shadow: 0 0 20px rgba(214, 31, 42, 0.5);
+  }
+
+  .neon-border {
+    @apply border border-red-500 shadow-[0_0_15px_rgba(214,31,42,0.5)];
+  }
+}
