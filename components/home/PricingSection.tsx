@@ -1,90 +1,113 @@
 "use client";
 
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Check, MessageCircle, Sparkles } from "lucide-react";
+import { Check, CheckCircle, InfinityIcon } from "lucide-react";
 import { motion } from "framer-motion";
 
 const pricingPlans = [
   {
-    name: "Starter",
-    price: "฿4,999",
-    period: "เดือน",
-    description: "เหมาะสำหรับผู้เริ่มต้น",
-    popular: false,
+    name: "Lifetime Standard",
+    price: "$999",
+    description: "Lifetime access to ChartPrime Pro and 3 months of Prime Automation Basic",
+    save: "Save $414",
     features: [
-      "2 Premium Indicators",
-      "Basic Support",
-      "1 เดือน Updates",
-      "TradingView Support",
-      "Email Support",
+      {
+        title: "Prime Automation Basic Subscription",
+        duration: "3 months free",
+        items: [
+          "Automate your trades with trading bots",
+          "Up to 5 automated crypto strategies",
+          "Ready-to-use proven strategies",
+          "Create fully custom bots",
+        ],
+      },
+      {
+        title: "ChartPrime Pro",
+        duration: "∞ Lifetime",
+        items: [
+          "Full kit with our four main indicators",
+          "Five weekly trading strategy sessions",
+          "Daily market insights from experts",
+          "Discord community access",
+          "Regular updates on new features",
+        ],
+      },
     ],
-    ctaText: "เริ่มต้นใช้งาน",
   },
   {
-    name: "Pro",
-    price: "฿12,999",
-    period: "6 เดือน",
-    description: "ยอดนิยม! ครบทุกฟีเจอร์",
-    popular: true,
+    name: "Lifetime Premium",
+    price: "$1,699",
+    description: "Lifetime access to ChartPrime Plus and 1 year of Prime Automation Pro",
+    save: "Save $2,400",
     features: [
-      "5+ Premium Indicators",
-      "Priority Support 24/7",
-      "6 เดือน Updates",
-      "MT4/MT5 + TradingView",
-      "1-on-1 Training Session",
-      "Custom Alert System",
-      "Trading Signals Group",
+      {
+        title: "Prime Automation Pro Subscription",
+        duration: "1 year free",
+        items: [
+          "Everything from Prime Automation Basic",
+          "Unlimited automated crypto strategies",
+          "Exclusive premium strategies",
+          "New proven strategies each week",
+        ],
+      },
+      {
+        title: "ChartPrime Plus",
+        duration: "∞ Lifetime",
+        items: [
+          "2 extra indicators, 12+ new features",
+          "Influencer indicators",
+          "Weekly TA Plus classes",
+          "Create your own custom signals",
+        ],
+      },
     ],
-    ctaText: "สั่งซื้อตอนนี้",
   },
   {
-    name: "Elite Bundle",
-    price: "฿29,999",
-    period: "Lifetime",
-    description: "ครบทุกอย่าง ใช้งานตลอดชีพ",
-    popular: false,
+    name: "Lifetime Ultimate AI",
+    price: "$2,499",
+    description: "Lifetime access to ChartPrime Plus, PA Builder, Screener and 1 year of Prime Automation Ultimate",
+    save: "Save $2,880",
     features: [
-      "20+ Indicators + Bots",
-      "VIP Support 24/7",
-      "Lifetime Updates",
-      "All Platforms",
-      "1-on-1 Training + Workshop",
-      "Custom Development",
-      "VIP Trading Signals",
-      "Affiliate Commission 30%",
-      "Private Community Access",
+      {
+        title: "Prime Automation Ultimate Subscription",
+        duration: "1 year free",
+        items: [
+          "Everything from Prime Automation Pro",
+          "Full access to our highest win-rate AI strategies",
+          "Grow your portfolio hands-free with AI bots",
+          "Smart AI that optimizes every trade",
+        ],
+        special: "Smart AI that optimizes every trade",
+      },
+      {
+        title: "ChartPrime Plus",
+        duration: "∞ Lifetime",
+        items: [
+          "2 extra indicators, 12+ new features",
+          "Influencer indicators",
+          "Weekly TA Plus classes",
+          "Create your own custom signals",
+        ],
+      },
+      {
+        title: "ChartPrime+ Screener",
+        duration: "∞ Lifetime",
+        description: "A powerful screener that scans the entire market for every high-probability setup in one clean view",
+      },
+      {
+        title: "Prime Automation Builder",
+        duration: "∞ Lifetime",
+        description: "Simulate your strategies on real market data so you know exactly what's profitable and what's not",
+      },
     ],
-    ctaText: "รับข้อเสนอพิเศษ",
   },
 ];
 
 export default function PricingSection() {
   return (
-    <section id="pricing" className="py-24 bg-gradient-to-b from-gray-950 to-black relative overflow-hidden">
-      {/* Background decorations */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-red-900/10 via-transparent to-transparent" />
-
+    <section id="pricing" className="py-24 bg-black relative overflow-hidden">
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-            แพ็กเกจ{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500">
-              ราคาพิเศษ
-            </span>
-          </h2>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto">
-            เลือกแพ็กเกจที่เหมาะกับคุณ พร้อมรับประกันความพึงพอใจ
-          </p>
-        </motion.div>
-
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
           {pricingPlans.map((plan, index) => (
             <motion.div
@@ -93,80 +116,70 @@ export default function PricingSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
-              className={`relative ${plan.popular ? 'lg:scale-110 lg:z-10' : ''}`}
             >
-              <Card className={`glass-card h-full flex flex-col relative ${
-                plan.popular
-                  ? 'border-red-500/60 shadow-[0_0_50px_rgba(214,31,42,0.4)]'
-                  : 'hover:border-red-500/30'
-              } transition-all duration-300`}>
-                {plan.popular && (
-                  <div className="absolute -top-5 left-1/2 -translate-x-1/2 z-20">
-                    <Badge variant="popular" className="px-6 py-2 text-sm font-bold shadow-lg">
-                      <Sparkles className="w-4 h-4 mr-1 inline" />
-                      ยอดนิยม
-                    </Badge>
+              <Card className={`bg-[#1C1C1C] border border-white/10 rounded-2xl h-full flex flex-col`}>
+                <CardHeader className="p-6">
+                  <div className="flex justify-between items-center mb-4">
+                    <h3 className="text-2xl font-bold text-white">{plan.name}</h3>
+                    <InfinityIcon className="w-8 h-8 text-white" />
                   </div>
-                )}
-
-                <CardHeader className="text-center pb-8 pt-8">
-                  <CardTitle className="text-2xl text-white mb-2">
-                    {plan.name}
-                  </CardTitle>
-                  <p className="text-sm text-gray-400 mb-6">{plan.description}</p>
-                  <div className="space-y-2">
-                    <div className="flex items-baseline justify-center gap-2">
-                      <span className={`text-5xl font-bold ${plan.popular ? 'text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500' : 'text-white'}`}>
-                        {plan.price}
-                      </span>
-                    </div>
-                    <div className="text-sm text-gray-400">/ {plan.period}</div>
+                  <p className="text-5xl font-bold text-white mb-2">{plan.price}</p>
+                  <p className="text-sm text-white/60 mb-4">{plan.description}</p>
+                  <div className="flex items-center space-x-2">
+                    <span className="bg-black text-white px-3 py-1 rounded-md text-sm">Black Friday</span>
+                    <span className="bg-black text-white px-3 py-1 rounded-md text-sm">11 : 30 : 12</span>
+                    <span className="bg-gray-800 text-white px-3 py-1 rounded-md text-sm">{plan.save}</span>
                   </div>
                 </CardHeader>
 
-                <CardContent className="flex-1 space-y-4 px-6">
+                <CardContent className="flex-1 space-y-4 p-6">
                   {plan.features.map((feature, i) => (
-                    <div key={i} className="flex items-start gap-3">
-                      <div className={`mt-0.5 w-5 h-5 rounded-full ${plan.popular ? 'bg-gradient-to-br from-red-500 to-pink-500' : 'bg-white/10'} flex items-center justify-center flex-shrink-0`}>
-                        <Check className={`w-3 h-3 ${plan.popular ? 'text-white' : 'text-gray-400'}`} />
+                    <div key={i} className="bg-black/40 p-4 rounded-lg">
+                      <div className="flex justify-between items-center mb-2">
+                        <h4 className="font-semibold text-white flex items-center">
+                            <CheckCircle className="w-4 h-4 mr-2 text-red-500" />
+                            {feature.title}
+                        </h4>
+                        <span className="text-xs bg-white/10 text-white px-2 py-1 rounded-full">{feature.duration}</span>
                       </div>
-                      <span className="text-gray-300 text-sm leading-relaxed">
-                        {feature}
-                      </span>
+                      {feature.items && (
+                        <ul className="space-y-2 text-sm text-white/70 pl-6">
+                          {feature.items.map((item, j) => (
+                            <li key={j} className="relative before:content-['•'] before:absolute before:left-[-1em] before:text-red-500">{item}</li>
+                          ))}
+                        </ul>
+                      )}
+                      {feature.description && <p className="text-sm text-white/70">{feature.description}</p>}
                     </div>
                   ))}
                 </CardContent>
 
-                <CardFooter className="p-6 pt-0">
+                <CardFooter className="p-6 flex flex-col items-center">
+                    <p className="text-sm text-white/60 mb-4">
+                        Got lifetime last year? <a href="#" className="text-red-400 underline">Upgrade at a prorated price</a>
+                    </p>
                   <Button
-                    variant={plan.popular ? "neon" : "outline"}
-                    size="lg"
-                    className="w-full group"
-                    asChild
+                    className="w-full bg-red-600 hover:bg-red-600 text-white font-bold py-3 rounded-lg"
                   >
-                    <a href="https://line.me/ti/p/YOUR_LINE_ID" target="_blank" rel="noopener noreferrer">
-                      <MessageCircle className="mr-2 h-5 w-5" />
-                      {plan.ctaText}
-                    </a>
+                    Get Lifetime Plan
                   </Button>
                 </CardFooter>
               </Card>
             </motion.div>
           ))}
         </div>
-
-        {/* Money-back guarantee */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mt-12"
-        >
-          <p className="text-gray-400 text-sm">
-            ✓ รับประกันความพึงพอใจ 7 วัน | ✓ ชำระเงินปลอดภัย | ✓ Support 24/7
-          </p>
-        </motion.div>
+        <div className="text-center mt-12">
+          <h3 className="text-lg font-semibold text-white mb-4">Safe and Secure Checkout</h3>
+          <div className="flex justify-center items-center space-x-4">
+            <img src="/SSL.svg" alt="SSL" className="h-6" />
+            <img src="/amex.svg" alt="Amex" className="h-6" />
+            <img src="/visa.svg" alt="Visa" className="h-6" />
+            <img src="/mastercard.svg" alt="Mastercard" className="h-6" />
+            <img src="/paypal.svg" alt="Paypal" className="h-6" />
+            <img src="/stripe.svg" alt="Stripe" className="h-6" />
+            <img src="/affirm.svg" alt="Affirm" className="h-6" />
+          </div>
+        </div>
       </div>
     </section>
   );

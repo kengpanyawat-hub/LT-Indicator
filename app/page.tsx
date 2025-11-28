@@ -2,6 +2,7 @@ import HeroSection from "@/components/HeroSection";
 import WhyLongtrade from "@/components/home/WhyLongtrade";
 import IndicatorShowcase from "@/components/home/IndicatorShowcase";
 import HowItWorks from "@/components/home/HowItWorks";
+import LifetimeInclusion from "@/components/home/LifetimeInclusion";
 import PricingSection from "@/components/home/PricingSection";
 import Testimonials from "@/components/home/Testimonials";
 import FaqSection from "@/components/home/FaqSection";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <WhyLongtrade />
       <IndicatorShowcase />
       <HowItWorks />
+      <LifetimeInclusion />
       <PricingSection />
       <Testimonials />
       <FaqSection />

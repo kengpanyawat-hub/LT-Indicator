@@ -11,7 +11,7 @@ import { motion } from "framer-motion";
 const indicators = [
   {
     name: "GF30 Pro",
-    image: "/indicator-gf30.svg",
+    image: "/indicator-gf30.vg",
     badge: "Most Popular",
     badgeVariant: "popular" as const,
     description: "อินดิเคเตอร์หาจุด Entry/Exit ที่แม่นยำสูง เหมาะสำหรับ Scalping และ Day Trading",
@@ -25,7 +25,7 @@ const indicators = [
   },
   {
     name: "LTG Levels Pro",
-    image: "/indicator-ltg-levels.svg",
+    image: "/indicator-ltg-levels.vg",
     badge: "New",
     badgeVariant: "neon" as const,
     description: "ระบบหา Support/Resistance อัตโนมัติ พร้อม Price Action Analysis",
@@ -39,7 +39,7 @@ const indicators = [
   },
   {
     name: "Signal Bot AI",
-    image: "/indicator-bot.svg",
+    image: "/indicator-bot.vg",
     badge: "Best for Auto Trading",
     badgeVariant: "neon" as const,
     description: "ระบบเทรดอัตโนมัติด้วย AI รองรับทั้ง Forex, Gold, Crypto",
@@ -69,7 +69,7 @@ export default function IndicatorShowcase() {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             อินดิเคเตอร์{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-purple-700">
               ยอดนิยม
             </span>
           </h2>
@@ -104,7 +104,7 @@ export default function IndicatorShowcase() {
                 </CardHeader>
 
                 <CardContent className="flex-1 space-y-4">
-                  <CardTitle className="text-2xl text-white group-hover:text-red-400 transition-colors">
+                  <CardTitle className="text-2xl text-white group-hover:text-red-500 transition-colors">
                     {indicator.name}
                   </CardTitle>
                   <p className="text-gray-400 leading-relaxed">
@@ -114,7 +114,7 @@ export default function IndicatorShowcase() {
                   <div className="space-y-2 pt-4">
                     {indicator.features.map((feature) => (
                       <div key={feature} className="flex items-start gap-2 text-sm">
-                        <Check className="w-4 h-4 text-red-400 mt-0.5 flex-shrink-0" />
+                        <Check className="w-4 h-4 text-red-500 mt-0.5 flex-shrink-0" />
                         <span className="text-gray-300">{feature}</span>
                       </div>
                     ))}

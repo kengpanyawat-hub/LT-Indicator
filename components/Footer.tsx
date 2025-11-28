@@ -22,25 +22,25 @@ const socialLinks = [
     name: "LINE",
     href: "https://line.me/ti/p/YOUR_LINE_ID",
     icon: MessageCircle,
-    color: "hover:text-green-400",
+    color: "hover:text-red-500",
   },
   {
     name: "Facebook",
     href: "https://facebook.com/YOUR_PAGE",
     icon: Facebook,
-    color: "hover:text-blue-400",
+    color: "hover:text-red-500",
   },
   {
     name: "YouTube",
     href: "https://youtube.com/YOUR_CHANNEL",
     icon: Youtube,
-    color: "hover:text-red-400",
+    color: "hover:text-red-500",
   },
   {
     name: "Email",
     href: "mailto:contact@longtrade.academy",
     icon: Mail,
-    color: "hover:text-yellow-400",
+    color: "hover:text-red-500",
   },
 ];
 

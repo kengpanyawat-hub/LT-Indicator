@@ -41,7 +41,7 @@ export default function HowItWorks() {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             วิธีการ{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-purple-700">
               เริ่มต้นใช้งาน
             </span>
           </h2>
@@ -67,16 +67,16 @@ export default function HowItWorks() {
 
               <Card className="glass-card hover:border-red-500/40 transition-all duration-300 h-full relative group">
                 {/* Step number badge */}
-                <div className="absolute -top-6 -right-6 w-16 h-16 rounded-full bg-gradient-to-br from-red-500 to-pink-500 flex items-center justify-center font-bold text-2xl text-white shadow-lg group-hover:scale-110 transition-transform">
+                <div className="absolute -top-6 -right-6 w-16 h-16 rounded-full bg-gradient-to-br from-red-500 to-pink-700 flex items-center justify-center font-bold text-2xl text-white shadow-lg group-hover:scale-110 transition-transform">
                   {step.number}
                 </div>
 
                 <CardContent className="p-8 space-y-4">
                   <div className="w-16 h-16 rounded-xl bg-white/5 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <step.icon className="w-8 h-8 text-red-400" />
+                    <step.icon className="w-8 h-8 text-red-500" />
                   </div>
 
-                  <h3 className="text-2xl font-semibold text-white group-hover:text-red-400 transition-colors">
+                  <h3 className="text-2xl font-semibold text-white group-hover:text-red-500 transition-colors">
                     {step.title}
                   </h3>
 

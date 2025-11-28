@@ -94,7 +94,7 @@ export default function HeroSection() {
           >
             <div className="relative group">
               {/* Glow effect */}
-              <div className="absolute -inset-0.5 bg-gradient-to-r from-red-600 to-pink-600 rounded-2xl opacity-75 blur group-hover:opacity-100 transition duration-500" />
+              <div className="absolute -inset-2.5 bg-gradient-to-r from-red-500 to-purple-700 rounded-2xl opacity-75 blur group-hover:opacity-100 transition duration-500" />
 
               {/* Main box */}
               <div className="relative rounded-2xl border-2 border-red-500/60 bg-black/40 backdrop-blur-sm p-1 overflow-hidden">

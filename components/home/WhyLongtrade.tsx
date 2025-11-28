@@ -9,29 +9,29 @@ const features = [
     icon: Sparkles,
     title: "Lifetime Access",
     description: "เข้าถึงอินดิเคเตอร์ระดับพรีเมียมตลอดชีพ พร้อมอัปเดตฟรีทุกเวอร์ชั่น",
-    color: "text-red-400",
-    bgColor: "bg-red-400/10",
+    color: "text-red-500",
+    bgColor: "bg-red-500/10",
   },
   {
     icon: Cpu,
     title: "Powerful Bots",
     description: "ระบบเทรดอัตโนมัติที่ทำงานแทนคุณ 24/7 ด้วย AI และอัลกอริทึมขั้นสูง",
-    color: "text-red-400",
-    bgColor: "bg-red-400/10",
+    color: "text-red-500",
+    bgColor: "bg-red-500/10",
   },
   {
     icon: Activity,
     title: "30+ Premium Features",
     description: "ฟีเจอร์ระดับมืออาชีพกว่า 30+ รายการ ครอบคลุมทุกสไตล์การเทรด",
-    color: "text-red-400",
-    bgColor: "bg-red-400/10",
+    color: "text-red-500",
+    bgColor: "bg-red-500/10",
   },
   {
     icon: Users,
     title: "10,000+ Traders Trust Us",
     description: "เทรดเดอร์กว่า 10,000+ คนทั่วโลกไว้วางใจและใช้งานจริง",
-    color: "text-red-400",
-    bgColor: "bg-red-400/10",
+    color: "text-red-500",
+    bgColor: "bg-red-500/10",
   },
 ];
 
@@ -51,7 +51,7 @@ export default function WhyLongtrade() {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             ทำไมต้อง{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-purple-700">
               Longtrade?
             </span>
           </h2>
@@ -74,7 +74,7 @@ export default function WhyLongtrade() {
                   <div className={`w-14 h-14 rounded-xl ${feature.bgColor} flex items-center justify-center group-hover:scale-110 transition-transform`}>
                     <feature.icon className={`w-7 h-7 ${feature.color}`} />
                   </div>
-                  <h3 className="text-xl font-semibold text-white group-hover:text-red-400 transition-colors">
+                  <h3 className="text-xl font-semibold text-white group-hover:text-red-500 transition-colors">
                     {feature.title}
                   </h3>
                   <p className="text-gray-400 leading-relaxed">

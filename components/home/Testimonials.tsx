@@ -16,14 +16,14 @@ const testimonials = [
   {
     name: "คุณปรียา ส.",
     role: "Swing Trader",
-    avatar: "/user-2.svg",
+    avatar: "/user-1.svg",
     rating: 5,
     comment: "ตอนแรกลังเลว่าจะซื้อไหม แต่พอได้ใช้จริงคุ้มค่ามากๆ Signal แม่นมาก ทำกำไรคืนทุนใน 2 สัปดาห์",
   },
   {
     name: "คุณอนุชา ก.",
     role: "Professional Trader",
-    avatar: "/user-3.svg",
+    avatar: "/user-1.svg",
     rating: 5,
     comment: "ใช้ระบบ Bot มา 6 เดือนแล้ว ทำกำไรให้อัตโนมัติตอนนอนหลับได้ด้วย ดีกว่าที่คิด ขอบคุณทีม Longtrade",
   },
@@ -51,7 +51,7 @@ export default function Testimonials() {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             รีวิวจาก{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-purple-700">
               ผู้ใช้งานจริง
             </span>
           </h2>
@@ -70,7 +70,7 @@ export default function Testimonials() {
         >
           {stats.map((stat, index) => (
             <div key={stat.label} className="text-center">
-              <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500 mb-2">
+              <div className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-700 mb-2">
                 {stat.value}
               </div>
               <div className="text-gray-400">{stat.label}</div>

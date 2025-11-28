@@ -59,7 +59,7 @@ export default function FaqSection() {
         >
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
             คำถาม{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-purple-700">
               ที่พบบ่อย
             </span>
           </h2>
@@ -83,7 +83,7 @@ export default function FaqSection() {
                   value={`item-${index}`}
                   className="border-white/10"
                 >
-                  <AccordionTrigger className="text-left text-lg font-semibold text-white hover:text-red-400 transition-colors">
+                  <AccordionTrigger className="text-left text-lg font-semibold text-white hover:text-red-500 transition-colors">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-gray-400 leading-relaxed pt-2">
@@ -109,7 +109,7 @@ export default function FaqSection() {
               href="https://line.me/ti/p/YOUR_LINE_ID"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-red-400 hover:text-red-300 transition-colors font-semibold"
+              className="inline-flex items-center gap-2 text-red-400 hover:text-red-500 transition-colors font-semibold"
             >
               ติดต่อทีมงานทาง LINE →
             </a>

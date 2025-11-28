@@ -29,7 +29,7 @@ export default function FinalCTA() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-red-600/20 to-pink-600/20 border border-red-500/30 backdrop-blur-sm"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-red-600/20 to-red-600/20 border border-red-500/30 backdrop-blur-sm"
             >
               <div className="w-2 h-2 bg-red-500 rounded-full animate-pulse" />
               <span className="text-sm font-semibold text-red-400 uppercase tracking-wider">
@@ -48,7 +48,7 @@ export default function FinalCTA() {
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
                 พร้อมเริ่มต้น
                 <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-pink-500 text-glow">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-purple-700 text-glow">
                   เทรดอย่างมืออาชีพ?
                 </span>
               </h2>

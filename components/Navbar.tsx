@@ -74,7 +74,7 @@ export default function Navbar() {
             >
               <a href="https://line.me/ti/p/YOUR_LINE_ID" target="_blank" rel="noopener noreferrer">
                 <span className="relative z-10">Get Promotion</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-pink-600 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute inset-0 bg-gradient-to-r from-red-00 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
             </Button>
           </div>
