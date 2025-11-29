@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // --- SVG Icons ---
@@ -65,13 +66,15 @@ const PhoneIcon = () => (
   </svg>
 );
 
-// LINE icon วงกลมเขียว + โลโก้ขาว
+// LINE icon using next/image
 const LineIcon = () => (
   <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#06C755]">
-    <img
+    <Image
       src="/LINE_APP_Android.png"
       alt="Line App"
-      className="h-7 w-7 rounded-full object-contain"
+      width={28} 
+      height={28}
+      className="rounded-full object-contain"
     />
   </div>
 );

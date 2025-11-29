@@ -8,6 +8,9 @@ import Image from 'next/image';
 import { useState } from 'react';
 import CountdownTimer from '@/components/CountdownTimer';
 
+// Define a specific type for the billing cycle
+type BillingCycle = 'monthly' | 'yearly';
+
 const lifetimePlans = [
   {
     name: 'Standard',
@@ -113,7 +116,8 @@ const subscriptionPlans = {
 };
 
 export default function PricingSection() {
-  const [billingCycle, setBillingCycle] = useState('monthly');
+  // Apply the specific type to the state
+  const [billingCycle, setBillingCycle] = useState<BillingCycle>('monthly');
 
   return (
     <section id="pricing" className="py-24 bg-black relative overflow-hidden">
