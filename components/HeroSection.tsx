@@ -55,7 +55,7 @@ export default function HeroSection() {
             transition={{ duration: 0.6 }}
             className="text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-purple-700 text-sm md:text-base tracking-wide"
           >
-            Black Friday offer ends in
+            🔥 ข้อเสนอสุดพิเศษนี้จะสิ้นสุดใน:
           </motion.div>
 
           {/* Countdown Timer - Large */}
@@ -98,18 +98,15 @@ export default function HeroSection() {
 
               {/* Main box */}
               <div className="relative rounded-2xl border-2 border-red-500/60 bg-black/40 backdrop-blur-sm p-1 overflow-hidden">
-                {/* Image placeholder */}
-                <div className="relative rounded-xl overflow-hidden bg-black/60 aspect-video flex items-center justify-center">
-                  {/* Placeholder for image - can be replaced with actual image */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-black to-gray-900" />
-                  <div className="relative z-10 text-gray-600 text-center">
-                    <svg className="w-24 h-24 mx-auto mb-4 opacity-30" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    <p className="text-sm font-medium">Dashboard Preview</p>
-                  </div>
-                  {/* Overlay gradient */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20" />
+                <div className="relative rounded-xl overflow-hidden bg-black/60 aspect-video">
+                  <iframe
+                    className="absolute top-0 left-0 w-full h-full"
+                    src="https://www.youtube.com/embed/y7DXDf8IQh0?autoplay=1&loop=1&controls=0&mute=1&playlist=y7DXDf8IQh0&showinfo=0"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                  ></iframe>
                 </div>
               </div>
             </div>

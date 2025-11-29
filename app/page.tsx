@@ -1,4 +1,4 @@
-import HeroSection from "@/components/HeroSection";
+import HeroSection from "@/components/home/HeroSection";
 import WhyLongtrade from "@/components/home/WhyLongtrade";
 import IndicatorShowcase from "@/components/home/IndicatorShowcase";
 import HowItWorks from "@/components/home/HowItWorks";
@@ -8,11 +8,13 @@ import Testimonials from "@/components/home/Testimonials";
 import FaqSection from "@/components/home/FaqSection";
 import FinalCTA from "@/components/home/FinalCTA";
 import TradingToolkit from "@/components/home/TradingToolkit";
+import CommunityWins from "@/components/home/CommunityWins";
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
+      <CommunityWins />
       <WhyLongtrade />
       <IndicatorShowcase />
       <TradingToolkit />

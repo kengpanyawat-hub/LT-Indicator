@@ -4,16 +4,16 @@ import { Facebook, MessageCircle, Mail, Youtube } from "lucide-react";
 
 const footerLinks = {
   product: [
-    { label: "Home", href: "/" },
-    { label: "Indicators", href: "/indicators" },
-    { label: "Pricing", href: "/pricing" },
-    { label: "Affiliate", href: "/affiliate" },
+    { label: "หน้าแรก", href: "/" },
+    { label: "อินดิเคเตอร์", href: "/indicators" },
+    { label: "ราคา", href: "/pricing" },
+    { label: "โปรแกรมพันธมิตร", href: "/affiliate" },
   ],
   support: [
-    { label: "FAQ", href: "/#faq" },
-    { label: "Testimonials", href: "/#testimonials" },
-    { label: "Privacy Policy", href: "/privacy" },
-    { label: "Terms of Service", href: "/terms" },
+    { label: "คำถามที่พบบ่อย", href: "/#faq" },
+    { label: "รีวิวจากผู้ใช้งาน", href: "/#testimonials" },
+    { label: "นโยบายความเป็นส่วนตัว", href: "/privacy" },
+    { label: "ข้อกำหนดในการให้บริการ", href: "/terms" },
   ],
 };
 
@@ -84,7 +84,7 @@ export default function Footer() {
 
           {/* Product Links */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Product</h3>
+            <h3 className="text-lg font-semibold text-white mb-4">ผลิตภัณฑ์</h3>
             <ul className="space-y-3">
               {footerLinks.product.map((link) => (
                 <li key={link.href}>
@@ -101,7 +101,7 @@ export default function Footer() {
 
           {/* Support Links */}
           <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Support</h3>
+            <h3 className="text-lg font-semibold text-white mb-4">ช่วยเหลือ</h3>
             <ul className="space-y-3">
               {footerLinks.support.map((link) => (
                 <li key={link.href}>
@@ -124,10 +124,10 @@ export default function Footer() {
                 <span className="text-white">LINE:</span> @longtrade
               </li>
               <li>
-                <span className="text-white">Email:</span> contact@longtrade.academy
+                <span className="text-white">อีเมล:</span> contact@longtrade.academy
               </li>
               <li>
-                <span className="text-white">Support:</span> 24/7 Customer Service
+                <span className="text-white">บริการลูกค้า:</span> 24/7
               </li>
             </ul>
           </div>
@@ -137,20 +137,20 @@ export default function Footer() {
         <div className="mt-12 pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0">
             <p className="text-sm text-gray-400">
-              © {new Date().getFullYear()} Longtrade Academy. All rights reserved.
+              © {new Date().getFullYear()} Longtrade Academy. สงวนลิขสิทธิ์
             </p>
             <div className="flex items-center space-x-6">
               <Link
                 href="/privacy"
                 className="text-sm text-gray-400 hover:text-red-400 transition-colors"
               >
-                Privacy Policy
+                นโยบายความเป็นส่วนตัว
               </Link>
               <Link
                 href="/terms"
                 className="text-sm text-gray-400 hover:text-red-400 transition-colors"
               >
-                Terms of Service
+                ข้อกำหนดในการให้บริการ
               </Link>
             </div>
           </div>

@@ -8,12 +8,12 @@ import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const menuItems = [
-  { label: "Home", href: "/" },
-  { label: "Indicators", href: "/indicators" },
-  { label: "Pricing", href: "/pricing" },
-  { label: "Affiliate", href: "/affiliate" },
-  { label: "Testimonials", href: "/#testimonials" },
-  { label: "FAQ", href: "/#faq" },
+  { label: "หน้าแรก", href: "/" },
+  { label: "อินดิเคเตอร์", href: "/indicators" },
+  { label: "ราคา", href: "/pricing" },
+  { label: "โปรแกรมพันธมิตร", href: "/affiliate" },
+  { label: "รีวิวจากผู้ใช้งาน", href: "/#testimonials" },
+  { label: "คำถามที่พบบ่อย", href: "/#faq" },
 ];
 
 export default function Navbar() {
@@ -73,7 +73,7 @@ export default function Navbar() {
               className="relative overflow-hidden group"
             >
               <a href="https://line.me/ti/p/YOUR_LINE_ID" target="_blank" rel="noopener noreferrer">
-                <span className="relative z-10">Get Promotion</span>
+                <span className="relative z-10">รับโปรโมชั่น</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-red-00 to-red-600 opacity-0 group-hover:opacity-100 transition-opacity" />
               </a>
             </Button>
@@ -129,7 +129,7 @@ export default function Navbar() {
                   asChild
                 >
                   <a href="https://line.me/ti/p/YOUR_LINE_ID" target="_blank" rel="noopener noreferrer">
-                    Get Promotion
+                    รับโปรโมชั่น
                   </a>
                 </Button>
               </motion.div>
