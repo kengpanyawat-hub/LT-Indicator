@@ -4,14 +4,14 @@
 
 @layer base {
   :root {
-    --background: 0 0% 2%;
-    --foreground: 0 0% 98%;
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
     --card: 0 0% 5%;
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 5%;
     --popover-foreground: 0 0% 98%;
-    --primary: 356 76% 48%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 75%;
+    --primary-foreground: 0 0% 0%;
     --secondary: 0 0% 15%;
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 15%;
@@ -20,10 +20,10 @@
     --accent-foreground: 0 0% 98%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 15%;
+    --border: 0 0% 75% / 0.4;
     --input: 0 0% 15%;
-    --ring: 356 76% 48%;
-    --radius: 0.5rem;
+    --ring: 0 0% 75%;
+    --radius: 0.75rem;
   }
 }
 
@@ -32,13 +32,14 @@
     @apply border-border;
   }
   body {
-    @apply bg-[#05050A] text-foreground;
+    @apply bg-black text-white;
   }
 }
 
 @layer utilities {
+  /* Glassmorphism Panel */
   .glass-panel {
-    @apply bg-white/5 border border-red-500/40 backdrop-blur-xl shadow-[0_0_40px_rgba(214,31,42,0.4)];
+    @apply bg-white/5 border border-[#C0C0C0]/40 backdrop-blur-xl;
     background: linear-gradient(
       135deg,
       rgba(255, 255, 255, 0.05) 0%,
@@ -46,25 +47,24 @@
     );
   }
 
+  /* Glassmorphism Card */
   .glass-card {
-    @apply bg-black/40 border border-red-500/20 backdrop-blur-md shadow-[0_0_20px_rgba(214,31,42,0.2)];
+    @apply bg-white/5 border border-[#C0C0C0]/40 backdrop-blur-lg rounded-2xl;
     background: linear-gradient(
       135deg,
-      rgba(255, 255, 255, 0.03) 0%,
-      rgba(0, 0, 0, 0.5) 100%
+      rgba(255, 255, 255, 0.05) 0%,
+      rgba(0, 0, 0, 0.3) 100%
     );
   }
 
+  /* Silver Text Glow */
   .text-glow {
-    text-shadow: 0 0 20px rgba(214, 31, 42, 0.5);
+    text-shadow: 0 0 20px rgba(192, 192, 192, 0.5);
   }
 
-  .neon-border {
-    @apply border border-red-500 shadow-[0_0_15px_rgba(214,31,42,0.5)];
-  }
-
-  .animate-gradient {
-    background-size: 200% 200%;
+  /* Silver Border Glow */
+  .silver-glow {
+    box-shadow: 0 0 20px rgba(192, 192, 192, 0.3);
   }
 
   /* Premium hover effects */
@@ -79,7 +79,7 @@
     inset: 0;
     border-radius: inherit;
     padding: 2px;
-    background: linear-gradient(135deg, rgba(214, 31, 42, 0.5), rgba(236, 72, 153, 0.5));
+    background: linear-gradient(135deg, rgba(192, 192, 192, 0.5), rgba(255, 255, 255, 0.3));
     -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -100,5 +100,71 @@
       transparent
     );
     background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -1000px 0;
+    }
+    100% {
+      background-position: 1000px 0;
+    }
+  }
+
+  /* Fade in animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  /* Pulse animation for loading */
+  @keyframes pulse-silver {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .animate-pulse-silver {
+    animation: pulse-silver 2s ease-in-out infinite;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: rgba(192, 192, 192, 0.3);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(192, 192, 192, 0.5);
+  }
+
+  /* Selection styling */
+  ::selection {
+    background: rgba(192, 192, 192, 0.3);
+    color: white;
   }
 }
